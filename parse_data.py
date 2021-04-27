@@ -40,7 +40,7 @@ def parse_data():
                     continue
                 data_dict[value.contents[0]] = {'# Tests Passed': altvalue1.contents[0], 'Errors': altvalue2.contents[0]}
 
-            data_dict['Test 0 [Address test, walking ones, 1 CPU]']['Errors'] = '7' # fake error
+            # data_dict['Test 0 [Address test, walking ones, 1 CPU]']['Errors'] = '7' # fake error, uncomment this line to see what an error message would look like
 
             sys.stdout.write(str(json.dumps(data_dict)))
 
