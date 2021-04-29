@@ -7,6 +7,7 @@ except ModuleNotFoundError:
 
 import sys
 import json
+import pprint
 
 
 def parse_data():
@@ -30,17 +31,21 @@ def parse_data():
             results = soup.find_all("div", {"class": "results"})[0]
             tables = results.find_all("table")
 
-            experiment_info = tables[0].find_all("td")
-            for value, altvalue in zip(*[iter(experiment_info)] * 2):
-                data_dict[value.contents[0]] = altvalue.contents[0]
-
-            experiment_results = tables[1].find_all("td")
-            for value, altvalue1, altvalue2 in zip(*[iter(experiment_results)] * 3):
-                if value.contents[0] == 'Test': # skip title row
-                    continue
-                data_dict[value.contents[0]] = {'# Tests Passed': altvalue1.contents[0], 'Errors': altvalue2.contents[0]}
-
-            data_dict['Test 0 [Address test, walking ones, 1 CPU]']['Errors'] = '7' # fake error
+            for table in tables:
+                info = table.find_all('td')
+                if len(info) % 2 == 0:
+                    for value, altvalue in zip(*[iter(info)] * 2): # handles results tables that have 2 columns (ex: result meta data tables)
+                        data_dict[value.contents[0]] = altvalue.contents[0]
+                elif len(info) % 3 == 0:
+                    for value, altvalue1, altvalue2 in zip(*[iter(info)] * 3): # handles results tables that have 3 columns (ex: test table)
+                        data_dict[value.contents[0]] = [altvalue1.contents[0], altvalue2.contents[0]]
+                else: # handles results tables that have 1 column (ex: Last 10 Errors table)
+                    for td in info:
+                        contents = td.contents[0]
+                        if contents == "Last 10 Errors":
+                            data_dict['Errors'] = []
+                        else:
+                            data_dict["Errors"].append(contents)
 
             sys.stdout.write(str(json.dumps(data_dict)))
 
