@@ -42,7 +42,7 @@ def parse_data():
                 else: # handles results tables that have 1 column (ex: Last 10 Errors table)
                     for td in info:
                         contents = td.contents[0]
-                        if contents == "Last 10 Errors":
+                        if contents == "Last 10 Errors": # change this line if html changes to have more displayed errors
                             data_dict['Errors'] = []
                         else:
                             data_dict["Errors"].append(contents)
