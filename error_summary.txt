@@ -7,6 +7,7 @@ hex_actual:		F7FFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11110111111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 4 of the pattern
+_dist_info:		N/A
 
 Error 1:
 ___address:		15AE8CA28
@@ -15,6 +16,7 @@ hex_actual:		FBFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111011111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 5 of the pattern
+_dist_info:		absolute distance from previous error address: 36.0052 MB
 
 Error 2:
 ___address:		15A50E708
@@ -23,6 +25,7 @@ hex_actual:		FDFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111101111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 6 of the pattern
+_dist_info:		absolute distance from previous error address: 9.95408 MB
 
 Error 3:
 ___address:		157466EA8
@@ -31,6 +34,7 @@ hex_actual:		FEFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111110111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 7 of the pattern
+_dist_info:		absolute distance from previous error address: 51.017824 MB
 
 Error 4:
 ___address:		154EF5AA0
@@ -39,6 +43,7 @@ hex_actual:		FEFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111110111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 7 of the pattern
+_dist_info:		absolute distance from previous error address: 39.261192 MB
 
 Error 5:
 ___address:		154B8FCA0
@@ -47,6 +52,7 @@ hex_actual:		EFFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11101111111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 3 of the pattern
+_dist_info:		absolute distance from previous error address: 3.563008 MB
 
 Error 6:
 ___address:		154B63C60
@@ -55,6 +61,7 @@ hex_actual:		7FFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		01111111111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 0 of the pattern
+_dist_info:		absolute distance from previous error address: 180288 BYTES
 
 Error 7:
 ___address:		15390F7F8
@@ -63,6 +70,7 @@ hex_actual:		EFFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11101111111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 3 of the pattern
+_dist_info:		absolute distance from previous error address: 19.21956 MB
 
 Error 8:
 ___address:		151D62D00
@@ -71,6 +79,7 @@ hex_actual:		FBFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111011111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 5 of the pattern
+_dist_info:		absolute distance from previous error address: 29.018872 MB
 
 Error 9:
 ___address:		150FE3568
@@ -79,9 +88,10 @@ hex_actual:		FBFFFFFF
 bin_expect:		11111111111111111111111111111111
 bin_actual:		11111011111111111111111111111111
 _flip_info:		flipped from 1 to 0 at bit position 5 of the pattern
+_dist_info:		absolute distance from previous error address: 14.153624 MB
 
 
 Max Contiguous Errors: 1
-Address range (Last 10 Errors Table): 150FE3568 - 15D0E2F78 (202 MB)
+Address range (Last 10 Errors Table): 150FE3568 - 15D0E2F78 (202.373648 MB)
 Lowest Error Address: 0x49D3D1E8 (1181MB)
 Highest Error Address: 0x15E08F168 (5600MB)
